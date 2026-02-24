@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentryAi | Advanced Email Spam Classifier</title>
+    <meta name="description" content="State-of-the-art email spam detection using Naive Bayes machine learning.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blob blob-1"></div>
+    <div class="background-blob blob-2"></div>
+    <div class="background-blob blob-3"></div>
+
+    <main class="app-container">
+        <header class="hero">
+            <div class="logo">
+                <span class="logo-icon">🛡️</span>
+                <h1>Sentry<span>AI</span></h1>
+            </div>
+            <p class="subtitle">Advanced Machine Learning Email Intelligence</p>
+        </header>
+
+        <section class="classifier-section">
+            <div class="input-card glass">
+                <div class="card-header">
+                    <h2>Analyze Message</h2>
+                    <span class="status-badge" id="api-status">Connecting...</span>
+                </div>
+                <div class="textarea-wrapper">
+                    <textarea id="email-input" placeholder="Paste your email content or message here to verify its authenticity..."></textarea>
+                    <div class="char-count"><span id="current-count">0</span> characters</div>
+                </div>
+                <button id="analyze-btn" class="primary-btn">
+                    <span class="btn-text">Check for Spam</span>
+                    <div class="loader-dots hidden">
+                        <span></span><span></span><span></span>
+                    </div>
+                </button>
+            </div>
+
+            <div id="result-container" class="result-card glass hidden">
+                <div class="result-header">
+                    <div class="result-label-wrapper">
+                        <span class="result-icon" id="result-icon"></span>
+                        <h3 id="result-label">Analyzing...</h3>
+                    </div>
+                    <div class="confidence-meter">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" id="confidence-circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage" id="confidence-value">0%</text>
+                        </svg>
+                        <span class="meter-label">Confidence</span>
+                    </div>
+                </div>
+
+                <div class="result-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Processing Time</span>
+                        <span class="detail-value" id="proc-time">0ms</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Cleaned Tokens</span>
+                        <div class="token-cloud" id="token-cloud">
+                            <!-- Tokens will be injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="app-footer">
+            <p>&copy; 2026 SentryAI Intelligence. Powered by Naive Bayes & TF-IDF.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
